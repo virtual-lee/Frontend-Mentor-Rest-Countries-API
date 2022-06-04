@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light">
+    <div id="header-container" class="light">
+        <div class="title"><h1>Where in the world?</h1></div>
+        <div class="colour-mode">
+            <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z" />
+            </svg>
+            <button class="dark-mode">Dark Mode</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js" defer></script>
+    <form>
+        <div id="input-container" class="light">
+            <div class="search-container">
+                <svg class="magnify" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
+                </svg>
+                <!--<img src="./images/magnifying-glass-solid.svg" alt="">-->
+                <input id="search" type="search" placeholder="Search for a country...">
+            </div>
+            <div class="filter light">
+                <select name="region-filter" id="region-filter">
+                    <option value="all">Filter by Region</option>
+                    <option value="africa">Africa</option>
+                    <option value="americas">Americas</option>
+                    <option value="asia">Asia</option>
+                    <option value="europe">Europe</option>
+                    <option value="oceania">Oceania</option>
+                </select>
+            </div>
+        </div>
+    </form>
+    <div id="country-holder">
+        <div class="chad">
+            <img src="./images/chad.jpg" alt="chad">
+            <span>Wot no data</span>
+        </div>     
+    </div>
+</body>
+</html>
