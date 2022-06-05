@@ -34,16 +34,9 @@ body {
     font-size: 100%;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
-    
-}
-
-body.light{
-    background-color: hsl(0, 0%, 98%);
-}
-
-body.dark {
     background-color: hsl(207, 26%, 17%);
     color: hsl(0, 0%, 100%);
+    
 }
 
 /* Make images easier to work with */
@@ -78,15 +71,11 @@ select {
 }
 
 svg {
-    fill: black;
+    fill: white;
     height: 15px;
     width: 15px;
     position: relative;
     top: 25%;
-}
-
-svg.dark {
-    fill: white;
 }
 
 .chad>img {
@@ -101,13 +90,9 @@ svg.dark {
 #header-container {
     display: flex;
     justify-content: space-between;
-    background-color: white;
+    background-color: hsl(209, 23%, 22%);
     box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.33);
     padding: 20px 150px 20px 150px; 
-}
-
-#header-container.dark {
-    background-color: hsl(209, 23%, 22%);
 }
 
 #input-container {
@@ -129,15 +114,11 @@ svg.dark {
 
 button {
     border: none;
-    background-color: white;
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 100%);
     position: relative;
     top: 25%;
     padding: 0px;
-}
-
-button.dark{
-    background-color: hsl(209, 23%, 22%);
-    color: hsl(0, 0%, 100%);
 }
 
 button :hover {
@@ -145,16 +126,12 @@ button :hover {
 }
 
 .search-container {
-    background-color: white;
+    background-color: hsl(209, 23%, 22%);
     width: 400px;
     margin: 50px 0px 20px 40px;
     height: 50px;
     border-radius: 5px;
     box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.33);
-}
-
-.search-container.dark {
-    background-color: hsl(209, 23%, 22%);
 }
 
 #search {
@@ -170,28 +147,23 @@ button :hover {
     margin-left: 20px;
 }
 
-input.dark {
+input {
     background-color: hsl(209, 23%, 22%);
     color: hsl(0, 0%, 100%);
 }
 
-input.dark::placeholder {
+input::placeholder {
     color: hsl(0, 0%, 100%);
 }
 
 .filter {
-    background-color: white;
+    background-color: hsl(209, 23%, 22%);
     width: 200px;
     margin: 50px 40px 20px 0px;
     height: 50px;
     border-radius: 5px;
     box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.33);
     justify-content: right;
-}
-
-
-.filter.dark {
-    background-color: hsl(209, 23%, 22%);
 }
 
 select {
@@ -201,12 +173,19 @@ select {
     border: none;
     width: 100%;
     padding: 0px 10px 0px 10px;
-}
-
-option.dark {
     background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 100%);
 }
 
+option {
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 100%);
+}
+
+a {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+}
 
 .item {
     width: fit-content;
@@ -214,17 +193,10 @@ option.dark {
     border-radius: 5px;
     box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.33);
     overflow-wrap: break-word;
-}
-
-.item.light {
-    background-color: white;
-}
-
-.item.dark {
     background-color: hsl(209, 23%, 22%);
 }
 
-.item>img{
+.item>a>img {
     border-radius: 5px 5px 0px 0px;
     height: 192px;
     width: 320px;

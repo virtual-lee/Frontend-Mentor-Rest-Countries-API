@@ -1,13 +1,30 @@
-$('.dark-mode').on('click', function () {
-    $('body').toggleClass('dark');
-    $('.item').toggleClass('dark');
-    $('#header-container').toggleClass('dark');
-    $('svg').toggleClass('dark');
-    $('button').toggleClass('dark');
-    $('.search-container').toggleClass('dark');
-    $('input').toggleClass('dark');
-    $('.filter').toggleClass('dark');
-    $('.option').toggleClass('dark');
+let currentTheme = localStorage.getItem("theme");
+//console.log(currentTheme);
+const stylesheet = $("link[rel='stylesheet']")
+const btn = $('.dark-mode');
+
+if (currentTheme === "dark") {
+    stylesheet.attr('href', 'style-dark.css');
+} else {
+    stylesheet.attr('href', 'style-light.css');
+}
+
+//Dark mode button click
+btn.on('click', function () {
+
+    const href = $("link[rel='stylesheet']").attr('href');
+    //const stylesheet = $("link[rel='stylesheet']")
+
+    if (currentTheme == 'light'){
+        stylesheet.attr('href', 'style-dark.css');
+        currentTheme = "dark";
+        localStorage.setItem('theme', 'dark');
+    } else  {
+        stylesheet.attr('href', 'style-light.css');
+        currentTheme = "light";
+        localStorage.setItem('theme', 'light');        
+    }
+
 });
 
 let url = 'all'
@@ -47,7 +64,7 @@ function getCountries(url){
     $.ajax({
         url: `https://restcountries.com/v2/${url}`,
         success: function(data){
-            console.log(data);
+            //console.log(data);
             displayCountryData(data);
         }
     });
@@ -71,7 +88,8 @@ function displayCountryData(data) {
         const holder = $('#country-holder')
         let countryItem ='';
 
-        countryItem += `<div class="country item light" value="${nameLower}">`;
+        countryItem += `<div class="country item" value="${nameLower}">`;
+        countryItem += '<a href="detail.html">';
         countryItem += `<img src="${flagImage}" alt="flag">`;
         countryItem += '<br>';
         countryItem += '<div class="content">';
@@ -81,6 +99,7 @@ function displayCountryData(data) {
         countryItem += `<div class="region"><span class="label">Region: </span><span>${region}</span>`;
         countryItem += `<div class="captial"><span class="label">Capital: </span><span>${capital}</span>`;
         countryItem += '</div>';
+        countryItem += '</a>';
         countryItem += '</div>';
 
         holder.append(countryItem);
