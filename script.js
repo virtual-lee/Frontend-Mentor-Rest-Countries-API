@@ -1,6 +1,8 @@
+//Dark mode ***START***
+
 let currentTheme = localStorage.getItem("theme");
 //console.log(currentTheme);
-const stylesheet = $("link[rel='stylesheet']")
+const stylesheet = $("link[rel='stylesheet']");
 const btn = $('.dark-mode');
 
 if (currentTheme === "dark") {
@@ -27,8 +29,11 @@ btn.on('click', function () {
 
 });
 
+//Dark mode ***END***
+
 let url = 'all'
 getCountries(url)
+
 
 $( "#search" ).keyup(function() {
     let searchWord = $('#search').val();
@@ -83,8 +88,6 @@ function displayCountryData(data) {
         //console.log(capital);
         const flagImage = el.flags.png;
 
-
-        
         const holder = $('#country-holder')
         let countryItem ='';
 
@@ -104,9 +107,42 @@ function displayCountryData(data) {
 
         holder.append(countryItem);
 
-
-
-
+        $('document').ready(function() {
+            $('.country').each(function() {
+                $(this).on('click', function() {
+                    const selectValue = $('#region-filter :selected').attr("value");
+                    const searchValue = $('#search').val()
+                    //alert(`${selectValue}`);
+                    //alert(searchValue);
+                    localStorage.setItem('select', selectValue);
+                    localStorage.setItem('search', searchValue);
+                });
+            });
+        });
         
+        $('document').ready(function() {
+
+            let countries = $('.country');
+            if (storedSearch != '') {
+                $('#search').val(`${storedSearch}`);
+                countries.not(`.country[value*='${storedSearch}']`).css('display','none'); 
+            }
+            
+
+        });
+
     });
 }
+
+
+//Country details click ***START***
+
+//Store values for when returning to home page
+
+const storedSearch = localStorage.getItem("search");
+console.log(storedSearch);
+const storedSelect = localStorage.getItem("select");
+console.log(storedSelect);
+
+
+
