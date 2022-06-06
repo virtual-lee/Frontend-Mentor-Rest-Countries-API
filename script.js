@@ -39,6 +39,7 @@ $( "#search" ).keyup(function() {
     let searchWord = $('#search').val();
     searchWord = searchWord.toLowerCase();
     //console.log(searchWord);
+    localStorage.setItem('search','')
 
     const countries = $('.country');
     //console.log(countries);
@@ -107,13 +108,12 @@ function displayCountryData(data) {
 
         holder.append(countryItem);
 
+        //Click on country
         $('document').ready(function() {
             $('.country').each(function() {
                 $(this).on('click', function() {
                     const selectValue = $('#region-filter :selected').attr("value");
                     const searchValue = $('#search').val()
-                    //alert(`${selectValue}`);
-                    //alert(searchValue);
                     localStorage.setItem('select', selectValue);
                     localStorage.setItem('search', searchValue);
                 });
@@ -123,7 +123,7 @@ function displayCountryData(data) {
         $('document').ready(function() {
 
             let countries = $('.country');
-            if (storedSearch != '') {
+            if (storedSearch !== '') {
                 $('#search').val(`${storedSearch}`);
                 countries.not(`.country[value*='${storedSearch}']`).css('display','none'); 
             }
