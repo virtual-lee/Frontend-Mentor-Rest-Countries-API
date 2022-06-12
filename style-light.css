@@ -151,21 +151,23 @@ button :hover {
 
 .filter {
     background-color: white;
-    width: 200px;
+    width: 250px;
     margin: 50px 40px 20px 0px;
     height: 50px;
     border-radius: 5px;
     box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.33);
     justify-content: right;
+    padding-left: 20px;
 }
 
 select {
     outline: none;
     position: relative;
     top: 25%;
+    right: 10px;
     border: none;
-    width: 100%;
-    padding: 0px 10px 0px 10px;
+    width: fit-content;
+    padding: 0px 75px 0px 10px;
 }
 
 a {
@@ -192,7 +194,16 @@ a {
 .item>.content{
     border-radius: 0px 0px 5px 5px;
     padding-left: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
+}
+
+.label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.data {
+    font-size: 14px;
 }
 
 .label {
@@ -220,9 +231,9 @@ a {
     text-align: center;
 }
 
-.back-button>button {
-    margin: 0 auto auto 10px;
-    top: 25%;
+.back-button>span {
+    margin: 13px auto auto 10px;
+    top: 50%;
 }
 
 .back-button>svg {

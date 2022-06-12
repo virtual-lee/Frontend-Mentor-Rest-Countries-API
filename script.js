@@ -72,6 +72,9 @@ function getCountries(url){
         success: function(data){
             //console.log(data);
             displayCountryData(data);
+        },
+        error: function(){
+            alert( "page not found" );
         }
     });
 }
@@ -99,9 +102,9 @@ function displayCountryData(data) {
         countryItem += '<div class="content">';
         countryItem += `<h4 class="name">${name}</h4>`;
         countryItem += '<br>';
-        countryItem += `<div class="population"><span class="label">Population: </span><span>${population}</span>`;
-        countryItem += `<div class="region"><span class="label">Region: </span><span>${region}</span>`;
-        countryItem += `<div class="captial"><span class="label">Capital: </span><span>${capital}</span>`;
+        countryItem += `<div class="population"><span class="label">Population: </span><span class="data">${population}</span>`;
+        countryItem += `<div class="region"><span class="label">Region: </span><span class="data">${region}</span>`;
+        countryItem += `<div class="captial"><span class="label">Capital: </span><span class="data">${capital}</span>`;
         countryItem += '</div>';
         countryItem += '</a>';
         countryItem += '</div>';
