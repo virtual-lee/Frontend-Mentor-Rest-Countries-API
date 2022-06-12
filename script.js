@@ -74,7 +74,7 @@ function getCountries(url){
             displayCountryData(data);
         },
         error: function(){
-            alert( "page not found" );
+            alert( "We have a problem" );
         }
     });
 }
